@@ -1,0 +1,17 @@
+name: Trusted Delivery
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: read
+  statuses: write
+
+jobs:
+  qualification:
+    name: Trusted Delivery qualification
+    uses: pcvantol/djconnect/.github/workflows/trusted-delivery-qualification.yml@ebbb35f038a7a3c7d46c12660968bcd50eb67580
+    with:
+      owner_login: pcvantol
