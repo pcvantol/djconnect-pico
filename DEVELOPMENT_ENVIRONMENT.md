@@ -51,6 +51,13 @@ Wi-Fi, Home Assistant, provisioning, or a DJConnect protocol.
 Capture the board model, MicroPython firmware build, command used, and redacted
 serial output in the pull request before treating the experiment as validated.
 
+## Simulator without a board
+
+[`simulator/wokwi/`](simulator/wokwi/) provides a Wokwi browser simulation for
+the serial and LED logic. It uses Wokwi's RP2040 Pico model and is deliberately
+not represented as Pico 2 W hardware validation. It does not validate Wi-Fi,
+Bluetooth, flashing, onboard-LED wiring, or timing on the RP2350-based board.
+
 ## Versioning and releases
 
 No release, OTA, or firmware publishing process is authorized yet. When an
