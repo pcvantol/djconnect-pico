@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "DJConnect contributors",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "smoke-led",
+      "top": -69.6,
+      "left": 211.2,
+      "attrs": { "color": "green" }
+    }
+  ],
+  "connections": [
+    ["pico:GP15", "smoke-led:A", "green", ["v0"]],
+    ["pico:GND.1", "smoke-led:C", "black", ["v0"]]
+  ],
+  "dependencies": {}
+}
