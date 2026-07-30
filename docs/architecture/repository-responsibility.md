@@ -23,3 +23,11 @@ deferred until hardware capabilities and product scope are approved.
 - Pairing, provisioning, and Home Assistant endpoint changes.
 - OTA, release artifacts, and supported hardware configuration.
 - Pico SDK C/C++ adoption and any migration plan.
+
+## Current capability boundary
+
+The host-testable `src/capabilities.py` module is a deliberately restrictive
+declaration of current scope: display, input, network, and Home Assistant are
+all `false`; only `experimental` is `true`. It is not a device-discovery or
+runtime contract. Adding a capability requires a separate approved architecture
+decision and reviewable increment.
