@@ -41,6 +41,16 @@ This is only a smoke skeleton. It must not contain credentials, pairing tokens,
 or production behavior. Use placeholders in any future examples and redact
 sensitive values from diagnostics.
 
+## First hardware smoke test
+
+After syncing `src/main.py`, the Pico 2 W prints two non-sensitive serial
+messages and pulses its onboard LED once for 250 ms. This validates only the
+MicroPython flash/sync path, serial output, and the board LED; it does not test
+Wi-Fi, Home Assistant, provisioning, or a DJConnect protocol.
+
+Capture the board model, MicroPython firmware build, command used, and redacted
+serial output in the pull request before treating the experiment as validated.
+
 ## Versioning and releases
 
 No release, OTA, or firmware publishing process is authorized yet. When an
