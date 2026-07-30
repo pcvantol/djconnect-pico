@@ -1,0 +1,22 @@
+# Python tooling
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.coverage
+coverage.xml
+
+# MicroPython upload and generated firmware/build artifacts
+*.mpy
+*.uf2
+*.elf
+*.bin
+build/
+dist/
+
+# Local configuration and secrets
+.env
+.env.*
+!*.example
+secrets.py
+settings_local.py
