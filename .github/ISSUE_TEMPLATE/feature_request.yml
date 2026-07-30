@@ -1,0 +1,24 @@
+name: Experimental proposal
+description: Propose an evaluated Pico experiment; this does not approve product scope.
+title: "[Proposal]: "
+labels: [proposal]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or learning goal
+    validations:
+      required: true
+  - type: textarea
+    id: boundary
+    attributes:
+      label: Architecture boundary and Home Assistant impact
+      description: Identify what remains outside this repository's authority.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Experiment acceptance evidence
+    validations:
+      required: true

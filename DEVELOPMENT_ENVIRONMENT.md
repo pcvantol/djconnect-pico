@@ -1,0 +1,48 @@
+# Development Environment
+
+## Selected initial stack
+
+The initial, prototype-only stack is MicroPython for **Raspberry Pi Pico 2 W**.
+Use a current stable Pico 2 W MicroPython firmware from the official
+[MicroPython downloads](https://micropython.org/download/RPI_PICO2_W/). Record
+the exact firmware build used for a hardware experiment in its PR; this
+repository intentionally does not ship a firmware image.
+
+MicroPython was selected for fast hardware evaluation with the smallest
+repository footprint. The Raspberry Pi Pico SDK C/C++ path remains an
+architecture decision for a later, approved product increment; do not build a
+second implementation during this phase.
+
+## macOS setup
+
+1. Install Python 3.11 or later and create an isolated environment if desired.
+2. Install the upload tool: `python3 -m pip install mpremote`.
+3. Download the Pico 2 W `.uf2` firmware from the official page above.
+4. Hold **BOOTSEL** while connecting the board, copy the `.uf2` to the mounted
+   `RPI-RP2` volume, then reconnect normally.
+
+## Local validation
+
+```sh
+python3 -m compileall -q src tests
+python3 -m unittest discover -s tests -v
+```
+
+## Device sync
+
+With a USB-connected, flashed Pico 2 W:
+
+```sh
+mpremote connect auto fs cp src/main.py :main.py
+mpremote connect auto reset
+```
+
+This is only a smoke skeleton. It must not contain credentials, pairing tokens,
+or production behavior. Use placeholders in any future examples and redact
+sensitive values from diagnostics.
+
+## Versioning and releases
+
+No release, OTA, or firmware publishing process is authorized yet. When an
+approved release process exists, use semantic versions and `vX.Y.Z` tags in
+line with the active DJConnect repositories.
