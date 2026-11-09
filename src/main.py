@@ -1,5 +1,7 @@
 """Pico 2 W hardware smoke test; no product behavior is implemented."""
 
+VERSION = "4.0.0"
+
 
 def startup_message() -> str:
     """Return a non-sensitive marker for a local device smoke check."""
@@ -29,6 +31,7 @@ def run_on_device() -> str:
 
 if __name__ == "__main__":
     print(startup_message())
+    print("DJConnect Pico version " + VERSION)
     try:
         print(run_on_device())
     except ImportError:
