@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "project": {"id": "djconnect-pico", "authority_repository_id": "djconnect-pico"},
+  "repository": {"id": "djconnect-pico", "role": "authority"},
+  "validation": {
+    "kind": "script",
+    "entrypoint": "python -m unittest discover -s tests -v",
+    "description": "Existing djconnect-pico CI host-side unit tests; no hardware or production qualification implied"
+  }
+}
